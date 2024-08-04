@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                   child: GestureDetector(
                     onTap: () {
                       selectedFilter = filter;
-                      print("tapped");
+                      // print("tapped");
                     },
                     child: Chip(
                       backgroundColor: selectedFilter == filter
