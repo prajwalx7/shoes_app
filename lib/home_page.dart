@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_app/global_variables.dart';
+import 'package:shoes_app/product_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -69,8 +71,10 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: GestureDetector(
                     onTap: () {
-                      selectedFilter = filter;
-                      // print("tapped");
+                      setState(() {
+                        selectedFilter = filter;
+                        // print("tapped");
+                      });
                     },
                     child: Chip(
                       backgroundColor: selectedFilter == filter
@@ -86,6 +90,21 @@ class _HomePageState extends State<HomePage> {
                           fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                   ),
+                );
+              },
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: products.length,
+              itemBuilder: (context, index) {
+                final product = products[index];
+                return ProductCard(
+                  title: product['title'] as String,
+                  price: product['price'] as double,
+                  image: product['imageUrl'] as String,
+                  backgroundColor:
+                      index.isEven ? Colors.blue.shade50 : Colors.grey.shade200,
                 );
               },
             ),

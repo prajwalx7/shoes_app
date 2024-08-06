@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shoes_app/home_page.dart';
+import 'package:shoes_app/product_detail_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,13 +16,22 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Lato',
         colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.amber, primary: Colors.amber),
+        appBarTheme: const AppBarTheme(
+            centerTitle: true,
+            titleTextStyle: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black)),
         inputDecorationTheme: InputDecorationTheme(
           hintStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           prefixIconColor: Colors.grey.shade600,
         ),
+        textTheme: const TextTheme(
+            titleMedium: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            bodySmall: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const ProductDetailsPage(),
     );
   }
 }
