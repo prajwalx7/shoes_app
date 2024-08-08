@@ -17,11 +17,6 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Lato',
         colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.amber, primary: Colors.amber),
-        appBarTheme: const AppBarTheme(
-          centerTitle: true,
-          titleTextStyle: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
-        ),
         inputDecorationTheme: InputDecorationTheme(
           hintStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           prefixIconColor: Colors.grey.shade600,
@@ -29,13 +24,19 @@ class MyApp extends StatelessWidget {
         textTheme: const TextTheme(
           titleLarge: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
           titleMedium: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          bodySmall: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          bodySmall: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black54),
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: ProductDetailsPage(
-        product: products[0],
-      ),
+      home: const HomePage(),
+      initialRoute: '/homepage',
+      routes: {
+        '/homepage': (context) => const HomePage(),
+        '/productdetailpage': (context) => ProductDetailsPage(
+              product: products[0],
+            ),
+      },
     );
   }
 }
