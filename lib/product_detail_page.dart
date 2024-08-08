@@ -14,13 +14,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            Navigator.popAndPushNamed(context, '/homepage');
-          },
-        ),
-        centerTitle: true,
         title: Text(
           "Details",
           style: Theme.of(context).textTheme.titleMedium,
@@ -36,8 +29,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 padding: const EdgeInsets.all(20),
                 height: 300,
                 decoration: BoxDecoration(
-                    color: const Color(0xffEEEEEE),
-                    borderRadius: BorderRadius.circular(52)),
+                  color: const Color(0xffEEEEEE),
+                  borderRadius: BorderRadius.circular(52),
+                ),
                 child: Image.asset(widget.product['imageUrl'] as String),
               ),
             ),
