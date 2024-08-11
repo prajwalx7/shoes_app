@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shoes_app/cart_page.dart';
-import 'package:shoes_app/product_list.dart';
+import 'package:shoes_app/screens/cart_page.dart';
+import 'package:shoes_app/widgets/product_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
         children: pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        iconSize: 34,
         backgroundColor: Colors.white,
         currentIndex: currentPage,
         onTap: (value) {
