@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shoes_app/model/cart_provider.dart';
+import 'package:shoes_app/providers/cart_provider.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -79,7 +79,8 @@ class CartPage extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                 );
-              }),
+              },
+            ),
     );
   }
 }
